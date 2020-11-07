@@ -8,9 +8,9 @@ Simple debug menu for Teardown Game
 4. Copy the 3 `.lua` files into `Teardown/data/ui`
 
 ## How to use?
-Go to options - Graphics and you will see the "Debug Window", enable it! :D
+Go to options - Graphics and enable "Debug Window"
 
 ## In-Game 
-![teardown debug menu example pic](https://i.imgur.com/7amDYW9.png)
+![teardown debug menu example pic](https://i.imgur.com/BL3Uxe4.png)
 
 ###### Thanks to: _dusieq#0404, Forgenet#1928, Rubikow
