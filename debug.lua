@@ -1,6 +1,3 @@
--- Made by _dusieq#0404
--- Version 0.2 by Forgenet#1928
-
 #include "game.lua"
 #include "options.lua"
 #include "score.lua"
@@ -8,83 +5,104 @@
 #include "about.lua"
 
 function DebugMenuUI()
-    local levelid = GetString("game.levelid")
-    local val = GetInt("options.gfx.debug")
-    local is_mission = false
+	local val = GetInt("options.gfx.debug")
 	if val == 1 then
-        UiPush()
-        UiColor(0, 0, 0, 0.5)
-		UiRect(UiWidth()/7.5, UiHeight()/3.1)
+		UiPush()
+    UiTranslate(5, 5)
+		UiColor(0, 0, 0, 0.7)
+		UiRect(100, 102)
 
-        --LevelID
-        if levelid == "hub15" then
-            UiTranslate(30, 75)
-        elseif levelid == "" then
-            UiTranslate(30, 36)
-            UiFont("font/bold.ttf", 30)
-            UiColor(0.5, 1, 0.5, 0.4)
-            UiText("CREATE")
-            UiTranslate(0, 39)
-        elseif string.find(levelid, "sandbox") then
-            UiTranslate(30, 36)
-            UiFont("font/bold.ttf", 30)
-            UiColor(0.5, 1, 0.5, 0.4)
-            UiText("SANDBOX")
-            UiTranslate(0, 39)
-        else
-            is_mission = true
-            UiTranslate(30, 36)
-            UiFont("font/bold.ttf", 30)
-            UiColor(0.5, 1, 0.5, 0.4)
-            UiText(levelid)
-            UiTranslate(0, 39)
-        end
 
-        --Tittle
-        UiFont("font/bold.ttf", 30)
-        UiColor(1, 1, 1)
-        UiText("Debug Menu")
-        UiTranslate(0, 25)
+		--Player Pos
+		UiTranslate(8, 22)
+    UiColor(1, 1, 1, 0.5)
+    UiFont("font/bold.ttf", 22)
+		UiText("Pos")
 
-        --Debuger Version
-        UiFont("font/regular.ttf", 24)
-        UiText("Version 0.2")
-        UiTranslate(0, 25)
-        UiText("-----------------------")
-        UiFont("font/regular.ttf", 22)
+		UiTranslate(7, 25)
+    UiColor(1, 0.5, 0.5, 1)
+    UiAlign("center")
+		UiText("X")
 
-        --Game Version
-        UiTranslate(0, 22)
-        UiText(string.format("Game Version %s", GetString("game.version")))
+    UiTranslate(80, 0)
+    UiColor(1, 1, 1)
+    UiAlign("right")
+    UiText(string.format("%.2f", tostring(GetPlayerPos()[1])))
 
-        --Fire counter
-        UiTranslate(0, 22)
-        UiText(string.format("Fire sources: %d", tostring(GetFireCount())))
-        UiTranslate(0, 22)
+		UiTranslate(-80, 22)
+    UiColor(0.5, 1.0, 0.5)
+    UiAlign("center")
+		UiText("Y")
 
-        --Mission time
-        if is_mission then
-            UiText(string.format("Mission time: %d", tostring(GetFloat("level.missiontime"))))
-            UiTranslate(0, 22)
-        end
+    UiTranslate(80, 0)
+    UiColor(1, 1, 1)
+    UiAlign("right")
+    UiText(string.format("%.2f", tostring(GetPlayerPos()[2])))
 
-        UiFont("font/regular.ttf", 24)
-        UiText("-----------------------")
-        UiFont("font/regular.ttf", 22)
-        UiTranslate(0, 22)
+		UiTranslate(-80, 22)
+    UiColor(0.5, 0.5, 1)
+    UiAlign("center")
+    UiText("Z")
 
-        --Player Pos
-        UiText(string.format("Position:"))
-        UiTranslate(0, 22)
-        UiText(string.format("X: %g", tostring(GetPlayerPos()[1])))
-        UiTranslate(0, 22)
-        UiText(string.format("Y: %g", tostring(GetPlayerPos()[2])))
-        UiTranslate(0, 22)
-        UiText(string.format("Z: %g", tostring(GetPlayerPos()[3])))
+    UiTranslate(80, 0)
+    UiColor(1, 1, 1)
+    UiAlign("right")
+    UiText(string.format("%.2f", tostring(GetPlayerPos()[2])))
+    UiTranslate(-80, 0)
+    UiAlign("left")
 
-        --PlayerHealth
-        UiTranslate(0, 22)
-        UiText(string.format("Health: %g", GetString("game.player.health")))
-        UiPop()
-    end
+		--Look At (thanks to Rubikow)
+		local maxDist = 500
+		local plyTransform = GetPlayerTransform()
+		local fwdPos = TransformToParentPoint(plyTransform, Vec(0, 0, maxDist * - 1))
+		local direction = VecSub(fwdPos, plyTransform.pos)
+		direction = VecNormalize(direction)
+		local hit, dist = Raycast(plyTransform.pos, direction, maxDist)
+		if hit then
+      local hitPos = TransformToParentPoint(plyTransform, Vec(0, 0, dist * - 1))
+
+      UiTranslate(-15, 15)
+  		UiColor(0, 0, 0, 0.7)
+  		UiRect(100, 102)
+
+      UiTranslate(5, 22)
+      UiColor(1, 1, 1, 0.5)
+      UiFont("font/bold.ttf", 22)
+      UiAlign("left")
+  		UiText("Look")
+
+      UiTranslate(10, 25)
+      UiColor(1, 0.5, 0.5)
+      UiAlign("center")
+  		UiText("X")
+
+      UiTranslate(80, 0)
+      UiColor(1, 1, 1)
+      UiAlign("right")
+      UiText(string.format("%.2f", tostring(hitPos[1])))
+
+  		UiTranslate(-80, 22)
+      UiColor(0.5, 1.0, 0.5)
+      UiAlign("center")
+  		UiText("Y")
+
+      UiTranslate(80, 0)
+      UiColor(1, 1, 1)
+      UiAlign("right")
+      UiText(string.format("%.2f", tostring(hitPos[2])))
+
+  		UiTranslate(-80, 22)
+      UiColor(0.5, 0.5, 1)
+      UiAlign("center")
+      UiText("Z")
+
+      UiTranslate(80, 0)
+      UiColor(1, 1, 1)
+      UiAlign("right")
+      UiText(string.format("%.2f", tostring(hitPos[3])))
+      UiTranslate(-80, 22)
+		end
+
+		UiPop()
+	end
 end

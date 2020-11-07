@@ -1,21 +1,16 @@
-# debug-menu-teardown
-Simple debug menu for teardown game version 0.2
-
-
-###### Authors: _dusieq#0404 and Forgenet#1928 (Discord)
-
+# teardown-debug-menu
+Simple debug menu for Teardown Game
 
 ## How to install?
-
-1. Unpack .zip file
-2. Go to Teardown Game Folder Teardown\data\ui
-3. Make backup of hud.lua and options.lua
-4. put 3 files into that folder.
+1. Go to Teardown Game Folder `Teardown/data/ui`
+2. Make backup of `hud.lua` and `options.lua`
+3. Unpack `.zip` file
+4. Copy the 3 `.lua` files into `Teardown/data/ui`
 
 ## How to use?
-
 Go to options - Graphics and you will see the "Debug Window", enable it! :D
 
 ## In-Game 
-![alt text](https://i.imgur.com/hjutGHf.png)
+![teardown debug menu example pic](https://i.imgur.com/7amDYW9.png)
 
+###### Thanks to: _dusieq#0404, Forgenet#1928, Rubikow
