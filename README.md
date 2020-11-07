@@ -11,6 +11,6 @@ Simple debug menu for Teardown Game
 Go to options - Graphics and enable "Debug Window"
 
 ## In-Game 
-![teardown debug menu example pic](https://i.imgur.com/BL3Uxe4.png)
+![teardown debug menu example pic](https://i.imgur.com/zoEORL3.png)
 
 ###### Thanks to: _dusieq#0404, Forgenet#1928, Rubikow
