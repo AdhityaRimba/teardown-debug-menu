@@ -42,14 +42,16 @@ function DebugMenuUI()
 		UiPush()
     UiTranslate(5, 5)
 		UiColor(0, 0, 0, 0.7)
-		UiRect(100, 102)
+    UiImageBox("common/box-solid-10.png", 100, 102, 10, 10)
 
 
 		--Player Pos
-		UiTranslate(8, 22)
+		UiTranslate(50, 22)
     UiColor(1, 1, 1, 0.5)
     UiFont("font/bold.ttf", 22)
+    UiAlign("center")
 	  UiText("Position")
+    UiTranslate(-43, 0)
 
 		UiTranslate(7, 25)
     UiColor(1, 0.5, 0.5, 1)
@@ -84,14 +86,16 @@ function DebugMenuUI()
     UiAlign("left")
 
     --Player Rotation
-    UiTranslate(90, -92)
+    UiTranslate(90, -91)
 		UiColor(0, 0, 0, 0.7)
-		UiRect(100, 102)
+    UiImageBox("common/box-solid-10.png", 100, 102, 10, 10)
 
-		UiTranslate(8, 22)
+		UiTranslate(50, 22)
     UiColor(1, 1, 1, 0.5)
     UiFont("font/bold.ttf", 22)
+    UiAlign("center")
 		UiText("Rotation")
+    UiTranslate(-43, 0)
 
 		UiTranslate(7, 25)
     UiColor(1, 0.5, 0.5, 1)
@@ -127,15 +131,16 @@ function DebugMenuUI()
 
     -- Player LookAt
 		if hit then
-      UiTranslate(-15, 15)
+      UiTranslate(-13, 15)
   		UiColor(0, 0, 0, 0.7)
-  		UiRect(100, 102)
+      UiImageBox("common/box-solid-10.png", 100, 102, 10, 10)
 
-      UiTranslate(5, 22)
+      UiTranslate(50, 22)
       UiColor(1, 1, 1, 0.5)
       UiFont("font/bold.ttf", 22)
-      UiAlign("left")
+      UiAlign("center")
   		UiText("LookAt")
+      UiTranslate(-46, 0)
 
       UiTranslate(10, 25)
       UiColor(1, 0.5, 0.5)
