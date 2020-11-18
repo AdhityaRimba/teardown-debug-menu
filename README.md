@@ -11,7 +11,7 @@ Simplified Debug Menu for Teardown Game
 Go to options - Graphics and enable "Simple Debug Window"
 
 ## In-Game 
-![teardown debug menu example pic](https://i.imgur.com/hgwRk24.png)
+![teardown debug menu example pic](https://i.imgur.com/ynwoqDb.png)
 
 ### Console features
 Click to get LookAt location printed into console
