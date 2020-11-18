@@ -1,4 +1,4 @@
-# teardown-debug-menu
+# Simple Debug Menu
 Simplified Debug Menu for Teardown Game
 
 ## How to install?
@@ -8,9 +8,9 @@ Simplified Debug Menu for Teardown Game
 4. Copy the 3 `.lua` files into `Teardown/data/ui`
 
 ## How to use?
-Go to options - Graphics and enable "Debug Window"
+Go to options - Graphics and enable "Simple Debug Window"
 
 ## In-Game 
-![teardown debug menu example pic](https://i.imgur.com/zoEORL3.png)
+![teardown debug menu example pic](https://i.imgur.com/hgwRk24.png)
 
 ###### Thanks to: _dusieq#0404, Forgenet#1928, Rubikow
