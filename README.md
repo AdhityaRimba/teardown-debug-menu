@@ -1,10 +1,10 @@
 # teardown-debug-menu
-Simple debug menu for Teardown Game
+Simplified Debug Menu for Teardown Game
 
 ## How to install?
 1. Go to Teardown Game Folder `Teardown/data/ui`
 2. Make backup of `hud.lua` and `options.lua`
-3. Unpack `teardown-debug-menu-main.zip` file
+3. Unpack `teardown-debug-menu.zip` file
 4. Copy the 3 `.lua` files into `Teardown/data/ui`
 
 ## How to use?

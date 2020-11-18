@@ -311,10 +311,12 @@ function drawOptions(scale, allowDisplayChanges)
 						end
 					end
 				UiPop()
-				UiTranslate(0, lh)
+        UiTranslate(0, lh)
 
-		        UiPush()
-					UiText("Debug Window")
+        UiTranslate(0, lh)
+
+        UiPush()
+					UiText("Simple Debug Window")
 					UiTranslate(x1, 0)
 					UiAlign("left")
 					UiColor(1,1,0.7)
@@ -330,6 +332,25 @@ function drawOptions(scale, allowDisplayChanges)
 					end
 				UiPop()
 				UiTranslate(0, lh)
+
+        UiPush()
+					UiText("Remove Crosshair")
+					UiTranslate(x1, 0)
+					UiAlign("left")
+					UiColor(1,1,0.7)
+					local val = GetInt("options.gfx.remove_crosshair")
+					if val == 0 then
+						if UiTextButton("Disabled") then
+							SetInt("options.gfx.remove_crosshair", 1)
+						end
+					else
+						if UiTextButton("Enabled") then
+							SetInt("options.gfx.remove_crosshair", 0)
+						end
+					end
+				UiPop()
+				UiTranslate(0, lh)
+
 			end
 			
 			if optionsTab == "audio" then

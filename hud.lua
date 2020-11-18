@@ -246,42 +246,44 @@ end
 
 
 function crosshair()
-	UiPush()
-		UiAlign("center middle")
-		UiTranslate(UiCenter(), UiMiddle());
-		local grabbing = GetBool("game.player.grabbing")
-		if grabbing then
-			UiPush()
-				UiColor(1,1,1,0.75)
-				UiTranslate(-3, -6)
-				UiImage("hud/crosshair-hand.png")
-			UiPop()
-		end
-		if not grabbing and GetBool("game.player.picking") then
-			if GetString("game.player.tool") ~= "plank" or GetBool("game.player.canusetool") then
-			UiImage("hud/crosshair-ring.png")
-			end
-		end
-		if not GetBool("game.player.grabbing") then
-			UiPush()
-				UiImage("hud/crosshair-dot.png")
-			UiPop()
-			if GetString("game.player.tool") == "gun" then
-				UiImage("hud/crosshair-gun.png")
-			end
-			if GetString("game.player.tool") == "shotgun" then
-				UiImage("hud/crosshair-shotgun.png")
-			end
-			if GetString("game.player.tool") == "rocket" then
-				UiImage("hud/crosshair-launcher.png")
-			end
-			if GetString("game.player.tool") == "plank" then
-				if GetBool("game.player.canusetool") then
-					UiImage("hud/crosshair-ring.png")
-				end
-			end
-		end
-	UiPop()
+  if not GetBool("options.gfx.remove_crosshair") then
+  	UiPush()
+  		UiAlign("center middle")
+  		UiTranslate(UiCenter(), UiMiddle());
+  		local grabbing = GetBool("game.player.grabbing")
+  		if grabbing then
+  			UiPush()
+  				UiColor(1,1,1,0.75)
+  				UiTranslate(-3, -6)
+  				UiImage("hud/crosshair-hand.png")
+  			UiPop()
+  		end
+  		if not grabbing and GetBool("game.player.picking") then
+  			if GetString("game.player.tool") ~= "plank" or GetBool("game.player.canusetool") then
+  			UiImage("hud/crosshair-ring.png")
+  			end
+  		end
+  		if not GetBool("game.player.grabbing") then
+  			UiPush()
+  				UiImage("hud/crosshair-dot.png")
+  			UiPop()
+  			if GetString("game.player.tool") == "gun" then
+  				UiImage("hud/crosshair-gun.png")
+  			end
+  			if GetString("game.player.tool") == "shotgun" then
+  				UiImage("hud/crosshair-shotgun.png")
+  			end
+  			if GetString("game.player.tool") == "rocket" then
+  				UiImage("hud/crosshair-launcher.png")
+  			end
+  			if GetString("game.player.tool") == "plank" then
+  				if GetBool("game.player.canusetool") then
+  					UiImage("hud/crosshair-ring.png")
+  				end
+  			end
+  		end
+  	UiPop()
+  end
 end
 
 
