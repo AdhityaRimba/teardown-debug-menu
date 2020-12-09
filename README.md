@@ -10,4 +10,7 @@ Enable/Disable with mods menu
 ## In-Game 
 ![teardown debug menu example pic](https://i.imgur.com/ynwoqDb.png)
 
+### Console features
+Click prints LookAt as xml location into console
+
 ###### Thanks to: _dusieq#0404, Forgenet#1928, Rubikow
