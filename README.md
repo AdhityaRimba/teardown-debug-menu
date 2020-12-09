@@ -12,5 +12,11 @@ Enable/Disable with mods menu
 
 ### Console features
 Click prints LookAt as xml location into console
+```xml
+<location pos="-0.66 0.91 -5.50"/>
+```
 
-###### Thanks to: _dusieq#0404, Forgenet#1928, Rubikow
+###### Thanks to: 
+- _dusieq#0404
+- Forgenet#1928
+- Rubikow#0098
