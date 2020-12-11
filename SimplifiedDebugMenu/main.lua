@@ -63,7 +63,7 @@ function DebugMenuUI()
     
       
       -- draw UI
-  		-- UiPush()
+  		UiPush()
       UiTranslate(5, 5)
   		UiColor(0, 0, 0, 0.7)
       UiImageBox("box-solid-10.png", 100, 102, 10, 10)
@@ -198,7 +198,7 @@ function DebugMenuUI()
         UiTranslate(-80, 22)
   		end
 
-  		-- UiPop()
+  		UiPop()
 end
 
 
