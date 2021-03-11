@@ -42,14 +42,14 @@ function DebugMenuUI()
 	local ry = rv[2]
 	local rz = rv[3]
 
-	-- print clicked locations to console
-	if InputPressed('lmb') then
-		if lx == 0.0 and ly == 0.0 and lz == 0.0 then
-			print('---')
-		else
-			print(string.format('<location pos="%.2f %.2f %.2f"/>', tostring(lx), tostring(ly), tostring(lz)))
-		end
-	end
+	-- print clicked locations to console (disabled for normal use, enable if you have console)
+	-- if InputPressed('lmb') then
+	-- 	if lx == 0.0 and ly == 0.0 and lz == 0.0 then
+	-- 		print('---')
+	-- 	else
+	-- 		print(string.format('<location pos="%.2f %.2f %.2f"/>', tostring(lx), tostring(ly), tostring(lz)))
+	-- 	end
+	-- end
 
 
 	-- draw UI
